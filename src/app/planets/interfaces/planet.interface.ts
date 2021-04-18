@@ -1,43 +1,43 @@
-export interface IPlanet {
+export interface Planet {
     /* The name of this species. */
-    "climate": string,
+    climate: string,
 
     /* The ISO 8601 date format of the time that this resource was created. */
-    "created": string,
+    created: string,
 
     /* The diameter of this planet in kilometers. */
-    "diameter": string,
+    diameter: string,
 
     /* The ISO 8601 date format of the time that this resource was edited. */
-    "edited": string,
+    edited: string,
 
     /* An array of Film URL Resources that this planet has appeared in. */
-    "films": string[],
+    films: string[],
 
     /* A number denoting the gravity of this planet, where "1" is normal or 1 standard G. "2" is twice or 2 standard Gs. "0.5" is half or 0.5 standard */
-    "gravity": string,
+    gravity: string,
 
     /*The name of this planet.*/
-    "name": string,
+    name: string,
 
     /* The average population of sentient beings inhabiting this planet. */
-    "population": string,
+    population: string,
 
     /* An array of People URL Resources that live on this planet. */
-    "residents": string[],
+    residents: string[],
 
     /* The number of standard hours it takes for this planet to complete a single rotation on its axis. */
-    "rotation_period": "23",
+    rotation_period: string,
 
     /* The number of standard days it takes for this planet to complete a single orbit of its local star. */
-    "orbital_period": string,
+    orbital_period: string,
 
     /* The percentage of the planet surface that is naturally occurring water or bodies of water.*/
-    "surface_water": "1",
+    surface_water: string,
 
     /* The terrain of this planet. Comma separated if diverse. */
-    "terrain": string,
+    terrain: string,
 
     /* The hypermedia URL of this resource. */
-    "url": string
+    url: string
 }
