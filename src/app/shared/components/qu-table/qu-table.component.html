@@ -11,7 +11,7 @@
             </tr>
         </thead>
 
-        <tbody *ngIf="data.results">
+        <tbody *ngIf="data?.results">
             <tr class="qu-table__row"
                 *ngFor="let item of data.results; let i = index;">
 
@@ -23,15 +23,14 @@
             </tr>
         </tbody>
     </table>
-    <div class="qu-table__nav">
-        <button [disabled]="!data.previous ? 'disabled': null"
-            class="qu-table__nav-btn qu-table__nav-btn--back"
-            (click)="handlePreviousPage()">
-            << Back
-                </button>
 
-                <button [disabled]="!data.next ? 'disabled': null"
-                    class="qu-table__nav-btn qu-table__nav-btn--next"
-                    (click)="handleNextPage()">Next >></button>
+    <div class="qu-table__nav">
+        <button class="qu-table__nav-btn"
+            [disabled]="!data.previous ? 'disabled': null"
+            (click)="handlePreviousPage()">{{buttonTexts.back}}</button>
+
+        <button class="qu-table__nav-btn"
+            [disabled]="!data.next ? 'disabled': null"
+            (click)="handleNextPage()">{{buttonTexts.next}}</button>
     </div>
 </div>

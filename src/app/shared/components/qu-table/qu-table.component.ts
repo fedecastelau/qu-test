@@ -14,6 +14,11 @@ export class QuTableComponent {
 
   @Output() goToPage = new EventEmitter();
 
+  buttonTexts = {
+    back: '<< Back',
+    next: 'Next >>'
+  }
+
   constructor() { }
 
   handleNextPage() {
