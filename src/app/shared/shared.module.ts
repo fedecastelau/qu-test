@@ -17,7 +17,8 @@ import { QuTableComponent } from './components/qu-table/qu-table.component';
   ],
   exports: [
     QuHeaderComponent,
-    QuContentComponent
+    QuContentComponent,
+    QuTableComponent
   ]
 })
 export class SharedModule { }
