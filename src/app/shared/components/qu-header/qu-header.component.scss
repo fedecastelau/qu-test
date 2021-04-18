@@ -1,0 +1,27 @@
+.qu-header {
+    &__author {
+        color: var(--gray-light);
+        margin-left: auto;
+    }
+    &__title {
+        align-self: flex-start;
+        color: var(--white);
+        margin: 0.76em 0.2em;
+    }
+
+    &__wrapper {
+        align-items: center;
+        background-color: var(--primary);
+        color: var(--white);
+        display: flex;
+        padding: 10px 30px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .qu-header {
+        &__wrapper {
+            display: block;
+        }
+    }
+}
