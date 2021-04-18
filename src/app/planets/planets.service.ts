@@ -12,7 +12,11 @@ export class PlanetsService {
 
   constructor(private http: HttpClient) { }
 
-  getAll$() {
-    return this.http.get<PlanetsListResponse>(this.planetsUrl);
+  getAll$(page: number = 1) {
+    return this.http.get<PlanetsListResponse>(this.planetsUrl, {
+      params: {
+        page: String(page)
+      }
+    });
   }
 }
