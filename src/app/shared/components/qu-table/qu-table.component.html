@@ -1,1 +1,31 @@
-<p>qu-table works!</p>
+<div class="qu-table__wrapper">
+    <table class="qu-table__table">
+
+        <thead class="qu-table__header">
+            <tr>
+                <th class="qu-table__column-title"
+                    [id]="column.id"
+                    *ngFor="let column of columns">
+                    {{ column.title }}
+                </th>
+            </tr>
+        </thead>
+
+        <tbody *ngIf="data.results">
+            <tr class="qu-table__row"
+                *ngFor="let item of data.results; let i = index;">
+
+                <td class="qu-table__row-item"
+                    *ngFor="let column of columns;">
+                    {{ item[column.id] }}
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <!-- <div>
+        <button *ngIf="data.previous">Back</button>
+        <button *ngIf="data.next">Next</button>
+    </div> -->
+
+</div>
