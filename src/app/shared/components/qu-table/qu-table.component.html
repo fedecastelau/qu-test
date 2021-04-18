@@ -23,9 +23,14 @@
             </tr>
         </tbody>
     </table>
-    <!-- <div>
-        <button *ngIf="data.previous">Back</button>
-        <button *ngIf="data.next">Next</button>
-    </div> -->
+    <div class="qu-table__nav">
+        <button [disabled]="!data.previous ? 'disabled': null"
+            class="qu-table__nav-btn qu-table__nav-btn--back"
+            (click)="handlePreviousPage()">
+            < Back</button>
 
+                <button [disabled]="!data.next ? 'disabled': null"
+                    class="qu-table__nav-btn qu-table__nav-btn--next"
+                    (click)="handleNextPage()">Next ></button>
+    </div>
 </div>

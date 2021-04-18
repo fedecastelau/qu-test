@@ -4,8 +4,22 @@
     }
 
     &__header {
-        border-bottom: 2px solid #e4e4e4;
+        border-bottom: 2px solid var(--gray);
         background: var(--gray-light);
+    }
+
+    &__nav {
+        text-align: center;
+    }
+
+    &__nav-btn {
+        background-color: var(--white);
+        border: 0;
+        cursor: pointer;
+        font-weight: 700;
+        outline: none;
+        padding: 35px;
+        text-transform: uppercase;
     }
 
     &__row {
@@ -16,5 +30,10 @@
 
     &__row-item {
         padding: 15px;
+    }
+
+    &__table {
+        border-collapse: collapse;
+        width: 100%;
     }
 }
