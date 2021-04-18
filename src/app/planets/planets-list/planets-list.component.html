@@ -4,6 +4,8 @@
 
     <qu-table *ngIf="planetsData"
         [columns]="planetsListColumns"
-        [data]="planetsData"></qu-table>
+        [data]="planetsData"
+        [page]="page"
+        (goToPage)="handleGoToPageEventFromTable($event)"></qu-table>
 
 </qu-content>
