@@ -3,4 +3,11 @@
     <h1>Welcome!</h1>
     <p>planets-list works!</p>
 
+
+    <qu-table *ngIf="planetsData"
+        [columns]="planetsListColumns"
+        [data]="planetsData"></qu-table>
+
+
+
 </qu-content>
