@@ -25,7 +25,7 @@ export class QuTableComponent {
   }
   tableContent = [];
   sortingStatus: QuTableSortingParam;
-
+  itemsPerPage = 10;
   constructor() { }
 
   ngOnInit() {
@@ -41,11 +41,19 @@ export class QuTableComponent {
   }
 
   handleNextPage() {
-    this.goToPage.emit(this.page + 1)
+    const nextPage = this.page + 1;
+
+    if (this.validatePageNumber(nextPage)) {
+      this.goToPage.emit(nextPage)
+    }
   }
 
   handlePreviousPage() {
-    this.goToPage.emit(this.page - 1)
+    const previousPage = this.page - 1;
+
+    if (this.validatePageNumber(previousPage)) {
+      this.goToPage.emit(previousPage)
+    }
   }
 
   handleColumnSorting(columnId: string) {
@@ -92,5 +100,11 @@ export class QuTableComponent {
       columnId: columnToSort,
       order: (currentStatus.order) ? nextSortOrder[currentStatus.order] : QuTableSortOrderEnum.ASC
     }
+  }
+
+  private validatePageNumber(page: number): boolean {
+    const totalOfPages = this.data.count / this.itemsPerPage;
+
+    return (page > 0 && page <= totalOfPages);
   }
 }
