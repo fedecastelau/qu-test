@@ -101,7 +101,9 @@
 * {
     box-sizing: border-box;
 }
-
+a {
+    color: var(--secondary);
+}
 body {
     font-family: "Open Sans";
     margin: 0;
@@ -117,4 +119,25 @@ h5 {
 
 p {
     color: var(--gray);
+}
+
+dl {
+    dt {
+        font-weight: 700;
+
+        &::after {
+            content: ": ";
+        }
+    }
+
+    dd {
+        break-before: avoid;
+        color: var(--gray);
+        margin: 0px 0 20px 0px;
+    }
+}
+
+ul {
+    list-style: none;
+    padding-inline-start: 20px;
 }
