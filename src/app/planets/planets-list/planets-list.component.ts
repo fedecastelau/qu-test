@@ -54,7 +54,7 @@ export class PlanetsListComponent implements OnInit {
 
   handleViewDetailsFromTable(planet: Planet) {
     const id = this.getIdFromPlanetUrl(planet.url);
-    console.log('id', id);
+
     this.router.navigate(['planets', Number(id)])
   }
 
