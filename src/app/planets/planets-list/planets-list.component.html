@@ -6,6 +6,7 @@
         [columns]="planetsListColumns"
         [data]="planetsData"
         [page]="page"
-        (goToPage)="handleGoToPageEventFromTable($event)"></qu-table>
+        (goToPage)="handleGoToPageEventFromTable($event)"
+        (viewDetails)="handleViewDetailsFromTable($event)"></qu-table>
 
 </qu-content>

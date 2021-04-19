@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { QuTableColumn } from 'src/app/shared/components/qu-table/interfaces/qu-table-column.interface';
 import { APP_CONTANTS } from 'src/app/shared/constants/app.constants';
+import { Planet } from '../interfaces/planet.interface';
 import { PlanetsService } from '../planets.service';
 
 @Component({
@@ -51,7 +52,19 @@ export class PlanetsListComponent implements OnInit {
     this.router.navigate(['planets'], { queryParams: { page: page } })
   }
 
+  handleViewDetailsFromTable(planet: Planet) {
+    const id = this.getIdFromPlanetUrl(planet.url);
+    console.log('id', id);
+    this.router.navigate(['planets', Number(id)])
+  }
+
   private async getPlanets(page: number) {
     return this.planetsService.getAll$(page).toPromise();
+  }
+
+  private getIdFromPlanetUrl(url: string) {
+    return url.split('/')
+      .filter(i => i !== '')
+      .slice(-1);
   }
 }

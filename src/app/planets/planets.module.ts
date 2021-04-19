@@ -5,10 +5,11 @@ import { PlanetsRoutingModule } from './planets-routing.module';
 import { PlanetsListComponent } from './planets-list/planets-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { PlanetsService } from './planets.service';
+import { PlanetDetailsComponent } from './planet-details/planet-details.component';
 
 
 @NgModule({
-  declarations: [PlanetsListComponent],
+  declarations: [PlanetsListComponent, PlanetDetailsComponent],
   imports: [
     CommonModule,
     PlanetsRoutingModule,
