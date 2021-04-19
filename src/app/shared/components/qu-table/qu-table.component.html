@@ -5,15 +5,19 @@
             <tr>
                 <th class="qu-table__column-title"
                     [id]="column.id"
-                    *ngFor="let column of columns">
+                    *ngFor="let column of columns"
+                    (click)="handleColumnSorting(column.id)">
                     {{ column.title }}
+                    <div class="qu-table__column-order-label"
+                        *ngIf="sortingStatus.columnId === column.id && sortingStatus.order">({{ sortingStatus.order }})
+                    </div>
                 </th>
             </tr>
         </thead>
 
-        <tbody *ngIf="data?.results">
+        <tbody *ngIf="tableContent">
             <tr class="qu-table__row"
-                *ngFor="let item of data.results; let i = index;">
+                *ngFor="let item of tableContent; let i = index;">
 
                 <td class="qu-table__row-item"
                     *ngFor="let column of columns;">

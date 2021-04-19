@@ -1,4 +1,8 @@
 .qu-table {
+    &__column-order-label {
+        color: var(--gray);
+        font-weight: 400;
+    }
     &__column-title {
         padding: 10px;
     }
