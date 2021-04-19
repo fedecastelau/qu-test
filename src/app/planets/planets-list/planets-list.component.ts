@@ -42,7 +42,7 @@ export class PlanetsListComponent implements OnInit {
         this.planetsData = await this.getPlanets(this.page);
 
       } catch {
-        alert(APP_CONTANTS.DEFAULT_ERROR_MSG)
+        alert(APP_CONTANTS.DEFAULT_ERROR_MSG);
       }
     });
   }
