@@ -21,23 +21,20 @@ export class QuTableComponent {
     back: '<< Back',
     next: 'Next >>'
   }
-
   tableContent = [];
-
-  sortingStatus: QuTableSortingParam = {
-    columnId: null,
-    order: QuTableSortOrderEnum.ASC
-  };
+  sortingStatus: QuTableSortingParam;
 
   constructor() { }
 
   ngOnInit() {
     this.tableContent = [...this.data.results];
+    this.sortingStatus = this.getInitialSortingStatus();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.data) {
       this.tableContent = [...this.data.results];
+      this.sortingStatus = this.getInitialSortingStatus();
     }
   }
 
@@ -64,6 +61,12 @@ export class QuTableComponent {
     }
   }
 
+  private getInitialSortingStatus(): QuTableSortingParam {
+    return {
+      columnId: null,
+      order: null
+    };
+  }
 
   private getNewSortOrderParams(currentStatus: QuTableSortingParam, columnToSort: string): QuTableSortingParam {
     const columnHasBeenAlreadySorted = (currentStatus.columnId === columnToSort);
