@@ -12,6 +12,10 @@
                         *ngIf="sortingStatus.columnId === column.id && sortingStatus.order">({{ sortingStatus.order }})
                     </div>
                 </th>
+
+                <th class="qu-table__column-title">
+                    View Details
+                </th>
             </tr>
         </thead>
 
@@ -24,6 +28,9 @@
                     {{ item[column.id] }}
                 </td>
 
+                <td>
+                    <button (click)="handleViewDetailsButton(item)">View</button>
+                </td>
             </tr>
         </tbody>
     </table>

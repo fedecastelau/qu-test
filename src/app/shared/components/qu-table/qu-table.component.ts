@@ -16,6 +16,8 @@ export class QuTableComponent {
   @Input() page: number;
 
   @Output() goToPage = new EventEmitter();
+  @Output() viewDetails = new EventEmitter();
+
 
   buttonTexts = {
     back: '<< Back',
@@ -59,6 +61,10 @@ export class QuTableComponent {
       //reset sorting
       this.tableContent = [...this.data.results];
     }
+  }
+
+  handleViewDetailsButton(item) {
+    this.viewDetails.emit(item);
   }
 
   private getInitialSortingStatus(): QuTableSortingParam {
