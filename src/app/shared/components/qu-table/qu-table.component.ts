@@ -103,7 +103,7 @@ export class QuTableComponent {
   }
 
   private validatePageNumber(page: number): boolean {
-    const totalOfPages = this.data.count / this.itemsPerPage;
+    const totalOfPages = Math.ceil(this.data.count / this.itemsPerPage);
 
     return (page > 0 && page <= totalOfPages);
   }
