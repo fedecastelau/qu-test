@@ -13,7 +13,10 @@
             <dt>Films</dt>
             <dd>
                 <ul>
-                    <li *ngFor="let film of planet.films"><a [href]="film">{{film}}</a></li>
+                    <li *ngFor="let film of planet.films">
+                        <a [href]="film"
+                            target="_blank">{{film}}</a>
+                    </li>
                 </ul>
             </dd>
 
@@ -26,7 +29,10 @@
             <dt>Films</dt>
             <dd>
                 <ul>
-                    <li *ngFor="let resident of planet.residents"><a [href]="resident">{{resident}}</a></li>
+                    <li *ngFor="let resident of planet.residents">
+                        <a [href]="resident"
+                            target="_blank">{{resident}}</a>
+                    </li>
                 </ul>
             </dd>
 
@@ -46,7 +52,10 @@
             <dd>{{planet.terrain}}</dd>
 
             <dt>Url</dt>
-            <dd>{{planet.url}}</dd>
+            <dd>
+                <a [href]="planet.url"
+                    target="_blank">{{planet.url}}</a>
+            </dd>
 
             <dt>Edited</dt>
             <dd>{{planet.edited}}</dd>
