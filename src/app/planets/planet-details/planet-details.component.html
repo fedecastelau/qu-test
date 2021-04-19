@@ -3,7 +3,8 @@
     <div class="planet-details-page__content">
         <h1 class="planet-details-page__title">Planet Details</h1>
 
-        <dl class="planet-details-page__description-list">
+        <dl class="planet-details-page__description-list"
+            *ngIf="planet">
             <dt>Name</dt>
             <dd>{{planet.name}}</dd>
 
