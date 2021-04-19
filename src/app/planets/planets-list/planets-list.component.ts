@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { QuTableColumn } from 'src/app/shared/components/qu-table/interfaces/qu-table-column.interface';
+import { APP_CONTANTS } from 'src/app/shared/constants/app.constants';
 import { PlanetsService } from '../planets.service';
 
 @Component({
@@ -33,12 +34,16 @@ export class PlanetsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(async ({ page }) => {
+      try {
+        if (page) {
+          this.page = Number(page);
+        }
 
-      if (page) {
-        this.page = Number(page);
+        this.planetsData = await this.getPlanets(this.page);
+
+      } catch {
+        alert(APP_CONTANTS.DEFAULT_ERROR_MSG)
       }
-
-      this.planetsData = await this.getPlanets(this.page);
     });
   }
 
