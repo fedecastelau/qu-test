@@ -5,7 +5,7 @@ import { PlanetsListComponent } from './planets-list/planets-list.component';
 
 const routes: Routes = [
   { path: '', component: PlanetsListComponent },
-  { path: ':id', component: PlanetDetailsComponent }
+  { path: ':planetId', component: PlanetDetailsComponent }
 ];
 
 @NgModule({
