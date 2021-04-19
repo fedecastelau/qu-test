@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { APP_CONTANTS } from 'src/app/shared/constants/app.constants';
 import { Planet } from '../interfaces/planet.interface';
 import { PlanetsService } from '../planets.service';
 
@@ -18,8 +19,14 @@ export class PlanetDetailsComponent implements OnInit {
   ) { }
 
   async ngOnInit(): Promise<void> {
-    this.planetId = this.route.snapshot.params.planetId;
-    this.planet = await this.getPlanet(this.planetId);
+    try {
+
+      this.planetId = this.route.snapshot.params.planetId;
+      this.planet = await this.getPlanet(this.planetId);
+
+    } catch {
+      alert(APP_CONTANTS.DEFAULT_ERROR_MSG);
+    }
   }
 
   private getPlanet(id: number) {
