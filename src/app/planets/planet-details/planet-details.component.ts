@@ -11,6 +11,7 @@ import { PlanetsService } from '../planets.service';
 export class PlanetDetailsComponent implements OnInit {
   planetId: number;
   planet: Planet;
+
   constructor(
     private route: ActivatedRoute,
     private planetsService: PlanetsService
@@ -19,13 +20,9 @@ export class PlanetDetailsComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.planetId = this.route.snapshot.params.planetId;
     this.planet = await this.getPlanet(this.planetId);
-
-    console.log('planet', this.planet)
   }
-
 
   private getPlanet(id: number) {
     return this.planetsService.get$(id).toPromise();
   }
-
 }
