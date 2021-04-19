@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [{
-  path: 'planets', loadChildren: () => import('./planets/planets.module').then(m => m.PlanetsModule),
-}];
+const routes: Routes = [
+  { path: '', redirectTo: '/planets', pathMatch: 'full' },
+  { path: 'planets', loadChildren: () => import('./planets/planets.module').then(m => m.PlanetsModule) }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: 'reload' })],
