@@ -1,5 +1,59 @@
 <qu-header></qu-header>
 <qu-content>
-    <h1>Planet</h1>
+    <div class="planet-details-page__content">
+        <h1 class="planet-details-page__title">Planet Details</h1>
 
+        <dl class="planet-details-page__description-list">
+            <dt>Name</dt>
+            <dd>{{planet.name}}</dd>
+
+            <dt>Climate</dt>
+            <dd>{{planet.climate}}</dd>
+
+            <dt>Films</dt>
+            <dd>
+                <ul>
+                    <li *ngFor="let film of planet.films"><a [href]="film">{{film}}</a></li>
+                </ul>
+            </dd>
+
+            <dt>Gravity</dt>
+            <dd>{{planet.gravity}}</dd>
+
+            <dt>Population</dt>
+            <dd>{{planet.population}}</dd>
+
+            <dt>Films</dt>
+            <dd>
+                <ul>
+                    <li *ngFor="let resident of planet.residents"><a [href]="resident">{{resident}}</a></li>
+                </ul>
+            </dd>
+
+            <dt>Rotation Period</dt>
+            <dd>{{planet.rotation_period}}</dd>
+
+            <dt>Orbital Period</dt>
+            <dd>{{planet.orbital_period}}</dd>
+
+            <dt>Surface Water</dt>
+            <dd>{{planet.surface_water}}</dd>
+
+            <dt>Surface Water</dt>
+            <dd>{{planet.surface_water}}</dd>
+
+            <dt>Terrain</dt>
+            <dd>{{planet.terrain}}</dd>
+
+            <dt>Url</dt>
+            <dd>{{planet.url}}</dd>
+
+            <dt>Edited</dt>
+            <dd>{{planet.edited}}</dd>
+
+            <dt>Created</dt>
+            <dd>{{planet.created}}</dd>
+
+        </dl>
+    </div>
 </qu-content>

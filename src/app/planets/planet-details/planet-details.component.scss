@@ -1,0 +1,30 @@
+.planet-details-page {
+    &__content {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__description-list {
+        columns: 3;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .planet-details-page {
+        &__description-list {
+            columns: 2;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .planet-details-page {
+        &__description-list {
+            columns: 1;
+        }
+    }
+}
