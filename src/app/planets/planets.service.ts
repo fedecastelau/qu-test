@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { Planet } from './interfaces/planet.interface';
 import { PlanetsListResponse } from './interfaces/planets-list.response.interface';
 
 @Injectable({
@@ -18,5 +19,9 @@ export class PlanetsService {
         page: String(page)
       }
     });
+  }
+
+  get$(id: number) {
+    return this.http.get<Planet>(`${this.planetsUrl}/${id}`,);
   }
 }
